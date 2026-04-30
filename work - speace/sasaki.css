@@ -1,0 +1,90 @@
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); /* 薄いブルーのグラデーション */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ボタンの共通スタイル */
+.btn {
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* カフェ：コーヒーブラウン */
+.btn-cafe {
+    background-color: #8d6e63;
+}
+
+/* 施設：清潔感のあるブルー */
+.btn-facility {
+    background-color: #5c92d1;
+}
+
+/* 飲食店：食欲をそそるオレンジ */
+.btn-food {
+    background-color: #f39c12;
+}
+
+/* ホバーエフェクト（マウスを置いた時） */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+/* スマホ用の微調整 */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -3,72 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高崎駅周辺 暇つぶしガイド</title>
-    <style>
-        /* 全体のデザイン設定 */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        /* ボタンのスタイル */
-        .nav-menu {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .btn {
-            display: block;
-            padding: 15px 40px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: transform 0.2s, background-color 0.2s;
-            font-size: 1.1rem;
-        }
-
-        /* ボタンごとの色分け */
-        .btn-cafe { background-color: #a67c52; } /* ブラウン */
-        .btn-facility { background-color: #4a90e2; } /* ブルー */
-        .btn-food { background-color: #e67e22; } /* オレンジ */
-
-        /* ホバー（マウスを乗せた時）の動き */
-        .btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-        }
-    </style>
+    <title>高崎駅暇つぶしガイド</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>高崎駅で暇つぶし</h1>
-        <p>どこで時間を過ごしますか？</p>
+        <h1>高崎駅 暇つぶし案内所</h1>
+        <p class="subtitle">今から何して過ごす？</p>
         
         <div class="nav-menu">
-            <a href="cafe.html" class="btn btn-cafe">☕ カフェ</a>
-            <a href="facility.html" class="btn btn-facility">🏢 施設（駅ビル・公園）</a>
-            <a href="food.html" class="btn btn-food">🍜 飲食店</a>
+            <a href="cafe.html" class="btn btn-cafe">☕ カフェでゆっくり</a>
+            <a href="facility.html" class="btn btn-facility">🏢 施設をぶらぶら</a>
+            <a href="food.html" class="btn btn-food">🍜 美味しいごはん</a>
         </div>
     </div>
 
