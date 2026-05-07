@@ -1,32 +1,25 @@
 /* =========================
-   リセット
+   1. リセット & ベース設定
 ========================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
 }
 
 /* =========================
-   全体
-========================= */
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    font-family:sans-serif;
-
-    background:#f4f4f4;
-
-    color:#333;
-
-    overflow-x:hidden;
-}
-
-/* =========================
-   ヘッダー
+   2. ヘッダー (高級感のあるガラス透過)
 ========================= */
 header{
 
@@ -55,16 +48,11 @@ header{
     1px solid rgba(255,255,255,0.08);
 }
 
-/* ロゴ */
-.logo{
-
-    color:white;
-
-    font-size:50px;
-
-    font-weight:bold;
-
-    letter-spacing:2px;
+.logo {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 /* =========================
@@ -77,8 +65,8 @@ nav ul{
     list-style:none;
 }
 
-nav li{
-    margin-left:40px;
+nav li {
+    margin-left: 30px;
 }
 
 nav a{
@@ -382,7 +370,7 @@ nav a:hover{
 }
 
 /* =========================
-   画像
+   5. テキスト & 遷移ボタン
 ========================= */
 img{
 
@@ -546,35 +534,28 @@ summary::-webkit-details-marker{
 /* =========================
    Topボタン
 ========================= */
-.top-btn{
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    font-size: 18px;
+}
 
-    position:fixed;
-
-    bottom:30px;
-    right:30px;
-
-    width:50px;
-    height:50px;
-
-    background:#333;
-
-    color:white;
-
-    text-decoration:none;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:50%;
-
-    font-size:24px;
-
-    z-index:999;
-
-    transition:0.3s;
+.top-btn {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 55px; height: 55px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 999;
+    transition: 0.3s;
 }
 
 /* hover */
