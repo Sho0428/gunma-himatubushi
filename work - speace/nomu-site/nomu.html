@@ -1,269 +1,71 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Leisure Guide</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高崎駅周辺 暇つぶしガイド</title>
     <link rel="stylesheet" href="nomu.css">
-
 </head>
 <body>
 
-    <!-- ヘッダー -->
     <header>
-
-        <div class="logo">
-            レジャースポット一覧
-        </div>
-
+        <div class="logo">TAKASAKI</div>
         <nav>
-
             <ul>
-
-                <li>
-                    <a href="#spa">温泉</a>
-                </li>
-
-                <li>
-                    <a href="#park">遊園地</a>
-                </li>
-
-                <li>
-                    <a href="#aquarium">水族館</a>
-                </li>
-
-                <li>
-                    <a href="#camp">キャンプ</a>
-                </li>
-
+                <li><a href="cafe.html">カフェ</a></li>
+                <li><a href="food.html">飲食店</a></li>
+                <li><a href="facility.html">施設</a></li>
             </ul>
-
         </nav>
-
     </header>
 
-    <!-- メイン画像 -->
-    <section class="hero">
-
+    <section class="hero" id="top">
         <div class="hero-text">
-
-            <h1>
-                休日を最高に
-               
-            </h1>
-            <p>
-                全国おすすめレジャー施設特集
-            </p>
-
+            <h1>高崎で、<br>何して遊ぶ？</h1>
+            <p>高崎駅周辺のおすすめ暇つぶしスポット特集</p>
         </div>
-
-        <!-- スクロール -->
-<div class="scroll">
-
-    <span>
-        SCROLL
-    </span>
-
-    <div class="arrow"></div>
-
-</div>
-
+        <div class="scroll">
+            <span>SCROLL</span>
+            <div class="arrow"></div>
+        </div>
     </section>
 
-    <!-- 温泉 -->
-    <section class="spot" id="spa">
-
-        <img src="img/animal.jpg" alt="温泉">
-
+    <section class="spot" id="facility">
+        <img src="img/facility.jpg" alt="高崎駅周辺の施設">
         <div class="spot-text">
-
-            <h2>
-                絶景温泉
-            </h2>
-
-            <p>
-                山に囲まれた露天風呂で、<br>
-                日頃の疲れを癒せます。
-            </p>
-
-            <details>
-
-                <summary>
-                    詳細を見る
-                </summary>
-
-                <div class="detail-content">
-
-                    <p>
-                        営業時間：10:00〜22:00
-                    </p>
-
-                    <p>
-                        料金：大人1500円
-                    </p>
-
-                    <p>
-                        サウナ・露天風呂完備
-                    </p>
-
-                </div>
-
-            </details>
-
+            <h2>ショッピング施設</h2>
+            <p>高崎OPAやモントレーなど、<br>駅直結でぶらぶらできるスポットが満載。</p>
+            
+            <a href="facility.html" class="link-button">施設一覧を見る</a>
         </div>
-
     </section>
 
-    <!-- 遊園地 -->
-    <section class="spot reverse" id="park">
-
-        <img src="img/animal.jpg" alt="遊園地">
-
+    <section class="spot reverse" id="cafe">
+        <img src="img/cafe.jpg" alt="高崎駅周辺のカフェ">
         <div class="spot-text">
-
-            <h2>
-                大型遊園地
-            </h2>
-
-            <p>
-                ジェットコースターや観覧車など、<br>
-                大人も子供も楽しめます。
-            </p>
-
-            <details>
-
-                <summary>
-                    詳細を見る
-                </summary>
-
-                <div class="detail-content">
-
-                    <p>
-                        営業時間：9:00〜20:00
-                    </p>
-
-                    <p>
-                        フリーパス：4800円
-                    </p>
-
-                    <p>
-                        人気アトラクション多数！
-                    </p>
-
-                </div>
-
-            </details>
-
+            <h2>癒やしのカフェ</h2>
+            <p>待ち合わせや、ちょっとした作業に。<br>こだわりのコーヒーと落ち着く空間をご提案。</p>
+            
+            <a href="cafe.html" class="link-button">カフェ一覧を見る</a>
         </div>
-
     </section>
 
-    <!-- 水族館 -->
-    <section class="spot" id="aquarium">
-
-        <img src="img/animal.jpg" alt="水族館">
-
+    <section class="spot" id="food">
+        <img src="img/food.jpg" alt="高崎駅周辺の飲食店">
         <div class="spot-text">
-
-            <h2>
-                幻想的な水族館
-            </h2>
-
-            <p>
-                人気のイルカショーや<br>
-                大迫力の巨大水槽があります。
-            </p>
-
-            <details>
-
-                <summary>
-                    詳細を見る
-                </summary>
-
-                <div class="detail-content">
-
-                    <p>
-                        営業時間：9:00〜18:00
-                    </p>
-
-                    <p>
-                        入館料：2200円
-                    </p>
-
-                    <p>
-                        毎日イルカショー開催中！
-                    </p>
-
-                </div>
-
-            </details>
-
+            <h2>絶品グルメ</h2>
+            <p>高崎パスタや駅弁、居酒屋まで。<br>お腹も心も満たされる飲食店をチェック。</p>
+            
+            <a href="food.html" class="link-button">飲食店一覧を見る</a>
         </div>
-
     </section>
 
-    <!-- キャンプ -->
-    <section class="spot reverse" id="camp">
-
-        <img src="img/animal.jpg" alt="キャンプ">
-
-        <div class="spot-text">
-
-            <h2>
-                自然キャンプ場
-            </h2>
-
-            <p>
-                星空を見ながら過ごす<br>
-                特別なアウトドア体験。
-            </p>
-
-            <details>
-
-                <summary>
-                    詳細を見る
-                </summary>
-
-                <div class="detail-content">
-
-                    <p>
-                        宿泊料金：1泊5000円
-                    </p>
-
-                    <p>
-                        BBQ設備完備
-                    </p>
-
-                    <p>
-                        コテージ宿泊も可能！
-                    </p>
-
-                </div>
-
-            </details>
-
-        </div>
-
-    </section>
-
-    <!-- フッター -->
     <footer>
-
-        <p>
-        Leisure Guide
-    </p>
-
-    <small>
-        © 2026 All Rights Reserved.
-    </small>
+        <p>Takasaki Leisure Guide</p>
+        <small>© 2026 All Rights Reserved.</small>
     </footer>
-<!-- トップへ戻る -->
-<a href="#top" class="top-btn">
-    ↑
-</a>
+
+    <a href="#top" class="top-btn">↑</a>
+
 </body>
+</html>
