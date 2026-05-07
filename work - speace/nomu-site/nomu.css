@@ -1,0 +1,816 @@
+/* =========================
+   リセット
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   全体
+========================= */
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:sans-serif;
+
+    background:#f4f4f4;
+
+    color:#333;
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 70px;
+
+    background:rgba(0,0,0,0.7);
+
+    backdrop-filter:blur(10px);
+}
+
+/* ロゴ */
+.logo{
+
+    color:white;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+/* メニュー */
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+}
+
+nav li{
+    margin-left:40px;
+}
+
+/* リンク */
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    transition:0.3s;
+}
+
+/* hover */
+nav a:hover{
+    color:orange;
+}
+
+/* =========================
+   メイン画像
+========================= */
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.6)
+    ),
+    url("img/main.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/*光が流れるHero*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+
+    left:-50%;
+
+    width:200%;
+
+    height:200%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+
+    transform:rotate(15deg);
+
+    animation:
+    shine 8s linear infinite;
+}
+
+
+
+
+
+/* ガラス風 */
+.hero-text{
+
+    padding:80px 100px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.35);
+
+    animation:fadeUp 1.2s ease;
+}
+
+/* タイトル */
+.hero h1{
+
+    font-size:clamp(48px,8vw,120px);
+
+    color:white;
+
+    letter-spacing:8px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,0.6),
+    0 0 20px rgba(255,255,255,0.2);
+}
+
+/* サブタイトル */
+.hero p{
+
+    font-size:32px;
+
+    color:white;
+
+    letter-spacing:4px;
+
+    text-shadow:
+    0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   Scroll
+========================= */
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    color:white;
+
+    letter-spacing:5px;
+
+    animation:float 2s infinite;
+}
+
+/* 文字 */
+.scroll span{
+
+    font-size:16px;
+
+    margin-bottom:10px;
+}
+
+/* 矢印 */
+.arrow{
+
+    width:20px;
+
+    height:20px;
+
+    border-right:3px solid white;
+
+    border-bottom:3px solid white;
+
+    transform:rotate(45deg);
+}
+
+/* =========================
+   紹介エリア
+========================= */
+.spot{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:120px 100px;
+
+    background:white;
+
+    border-bottom:
+    1px solid #e6e6e6;
+
+    transition:0.4s;
+
+    animation:
+    fadeUp 1s ease;
+}
+
+/* hover */
+.spot:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* 交互 */
+.reverse{
+
+    flex-direction:row-reverse;
+}
+
+/* 温泉 */
+#spa{
+    background:
+    linear-gradient(
+        to right,
+        #f8f1e7,
+        #ffffff
+    );
+}
+
+/* 遊園地 */
+#park{
+    background:
+    linear-gradient(
+        to right,
+        #f5f5f5,
+        #ffffff
+    );
+}
+
+/* 水族館 */
+#aquarium{
+    background:
+    linear-gradient(
+        to right,
+        #e8f7ff,
+        #ffffff
+    );
+}
+
+/* キャンプ */
+#camp{
+    background:
+    linear-gradient(
+        to right,
+        #edf5ea,
+        #ffffff
+    );
+}
+
+/* =========================
+   画像
+========================= */
+img{
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+}
+
+.spot img{
+
+    width:600px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.2);
+
+    transition:0.5s;
+}
+
+/* hover */
+.spot img:hover{
+
+    transform:scale(1.05);
+}
+
+/* =========================
+   テキスト
+========================= */
+.spot-text{
+    max-width:500px;
+}
+
+/* タイトル */
+.spot-text h2{
+
+    position:relative;
+
+    display:inline-block;
+
+    font-size:65px;
+
+    margin-bottom:30px;
+}
+
+/* タイトル下線 */
+.spot-text h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-10px;
+
+    width:60px;
+
+    height:4px;
+
+    background:orange;
+
+    border-radius:10px;
+}
+
+/* 説明 */
+.spot-text p{
+
+    font-size:22px;
+
+    line-height:2;
+
+    margin-bottom:35px;
+}
+
+/* =========================
+   詳細
+========================= */
+details{
+    margin-top:20px;
+}
+
+/* ボタン */
+summary{
+
+    list-style:none;
+
+    background:orange;
+
+    color:white;
+
+    width:240px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+/* hover */
+summary:hover{
+
+    background:darkorange;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(255,165,0,0.5);
+}
+
+/* ▼消す */
+summary::-webkit-details-marker{
+    display:none;
+}
+
+/* 詳細内容 */
+.detail-content{
+
+    margin-top:25px;
+
+    background:#f1f1f1;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    line-height:2;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   topボタン
+========================= */
+.top-btn{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    background:#333;
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    font-size:24px;
+
+    z-index:999;
+
+    transition:0.3s;
+}
+
+/* hover */
+.top-btn:hover{
+
+    background:#555;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   フッター
+========================= */
+footer{
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px;
+
+    font-size:18px;
+}
+
+/* =========================
+   アニメーション
+========================= */
+
+/* ふわっと表示 */
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+/* Scrollアニメ */
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(10px);
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+}
+
+/* =========================
+   スマホ対応
+========================= */
+@media(max-width:768px){
+
+    /* ヘッダー */
+    header{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    /* ヒーロー */
+    .hero-text{
+        padding:40px 20px;
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:3px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    /* スポット */
+    .spot{
+
+        flex-direction:column;
+
+        padding:80px 20px;
+
+        gap:40px;
+    }
+
+    .spot img{
+        width:100%;
+    }
+
+    .spot-text{
+        width:100%;
+    }
+
+    .spot-text h2{
+        font-size:42px;
+    }
+
+    .spot-text p{
+        font-size:18px;
+    }
+
+    summary{
+
+        width:100%;
+
+        font-size:18px;
+    }
+}
+
+
+
+/*波デザイン*/
+.spot{
+
+    border-radius:
+    60px 60px 0 0;
+}
+
+
+/*ボタンを立体化*/
+summary{
+
+    box-shadow:
+    0 10px 20px rgba(255,140,0,0.3);
+}
+
+
+
+
+/*ネオン風ボタン*/
+summary{
+
+    box-shadow:
+    0 0 10px rgba(255,165,0,0.5),
+    0 0 20px rgba(255,165,0,0.3);
+}
+
+/*背景ぼかし強化*/
+.hero{
+
+    backdrop-filter:blur(20px);
+}
+
+
+/*画像に光沢*/
+.spot img:hover{
+
+    filter:
+    brightness(1.1);
+
+}
+
+
+/*ボタンぷるっと動く*/
+summary:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
+}
+
+
+
+.hero h1{
+
+    animation:
+    glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px rgba(255,255,255,0.2);
+    }
+
+    to{
+        text-shadow:
+        0 0 25px rgba(255,255,255,0.6);
+    }
+}
+
+/*画像に枠線アニメ*/
+.spot img{
+
+    border:
+    3px solid transparent;
+}
+
+.spot img:hover{
+
+    border:
+    3px solid rgb(130, 127, 122);
+}
+
+
+/*Heroに半透明黒レイヤー追加*/
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    rgba(247, 249, 250, 0.2);
+}
+
+/*タイトルの色付け*/
+
+.hero-text{
+
+    background:
+    rgba(245, 233, 8, 0.836);
+}
+
+.hero h1{
+
+    color:white;
+}
+
+
+/*タイトルを映画風に*/
+.hero h1{
+
+    color:white;
+
+    font-size:
+    clamp(60px,8vw,120px);
+
+    font-weight:900;
+
+    letter-spacing:10px;
+
+    text-shadow:
+    0 5px 25px rgba(0,0,0,0.8),
+    0 0 40px rgba(255,255,255,0.25);
+}
+
+
+
+/*Heroにパララックス感*/
+.hero{
+
+    background-attachment:fixed;
+
+    background-position:center;
+
+    background-size:cover;
+}
+
+/*画像を3Dっぽく*/
+.spot img{
+
+    transform:
+    perspective(1000px)
+    rotateY(-5deg);
+}
+
+
+.hero h1{
+
+    font-weight:900;
+
+    letter-spacing:12px;
+}
