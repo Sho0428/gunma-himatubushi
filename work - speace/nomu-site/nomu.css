@@ -1,26 +1,34 @@
 /* =========================
    1. リセット & ベース設定
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    overflow-x: hidden;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 /* =========================
-   2. ヘッダー (高級感のあるガラス透過)
+   全体
 ========================= */
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:sans-serif;
+
+    background:#f4f4f4;
+
+    color:#333;
+
+    overflow-x:hidden;
+}
+
+/* =========================
+   ヘッダー
+========================= */
+
 header{
 
     width:100%;
@@ -48,11 +56,16 @@ header{
     1px solid rgba(255,255,255,0.08);
 }
 
-.logo {
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 2px;
+/* ロゴ */
+.logo{
+
+    color:white;
+
+    font-size:50px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
 }
 
 /* =========================
@@ -65,8 +78,8 @@ nav ul{
     list-style:none;
 }
 
-nav li {
-    margin-left: 30px;
+nav li{
+    margin-left:40px;
 }
 
 nav a{
@@ -240,10 +253,72 @@ nav a:hover{
     text-shadow:
     0 3px 10px rgba(0,0,0,0.5);
 }
+.hero h1 {
+    font-size: clamp(40px, 8vw, 100px);
+    color: white;
+    font-weight: 900;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 25px rgba(0,0,0,0.8);
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255,255,255,0.2); }
+    to { text-shadow: 0 0 25px rgba(255,255,255,0.6); }
+}
+
+.hero p {
+    font-size: 24px;
+    color: white;
+    letter-spacing: 4px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
 
 /* =========================
-   Scroll
+   4. 紹介セクション (Spot)
 ========================= */
+.spot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 120px 10%;
+    background: white;
+    border-radius: 60px 60px 0 0;
+    margin-top: -60px;
+    position: relative;
+    z-index: 5;
+    transition: 0.4s;
+}
+
+.spot:hover {
+    transform: translateY(-8px);
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 3D感のある画像ホバー */
+.spot img {
+    width: 50%;
+    max-width: 600px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    transform: perspective(1000px) rotateY(-5deg);
+}
+
+.spot img:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* =========================
+   5. テキスト & 遷移ボタン
+========================= */
+
 .scroll{
 
     position:absolute;
@@ -288,7 +363,95 @@ nav a:hover{
     transform:rotate(45deg);
 }
 
+.spot-text {
+    max-width: 500px;
+}
+
+.spot-text h2 {
+    font-size: 55px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.spot-text h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: orange;
+    border-radius: 10px;
+}
+
+
+.spot-text p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* リンクボタン (ネオン風) */
+.link-button {
+    display: inline-block;
+    background: orange;
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255,165,0,0.5), 0 0 20px rgba(255,165,0,0.3);
+}
+
+.link-button:hover {
+    background: darkorange;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(255, 140, 0, 0.5);
+}
+
+/* セクション別背景グラデーション */
+#facility { background: linear-gradient(to right, #f8f9fa, #ffffff); }
+#cafe { background: linear-gradient(to right, #fdf5e6, #ffffff); }
+#food { background: linear-gradient(to right, #fff5f5, #ffffff); }
+
 /* =========================
+   6. アニメーション & 装飾
+========================= */
+.scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 2;
+    text-align: center;
+    animation: float 2s infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
+
+.arrow {
+    width: 15px; height: 15px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+    margin: 10px auto;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+
    Spot
 ========================= */
 .spot{
@@ -369,9 +532,43 @@ nav a:hover{
     );
 }
 
-/* =========================
-   5. テキスト & 遷移ボタン
+/*=======
+   7. フッター & Topボタン
 ========================= */
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    font-size: 18px;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 55px; height: 55px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.top-btn:hover {
+    background: orange;
+    transform: translateY(-5px);
+}
+
+/* =========================
+   画像
+========================= */
+
 img{
 
     max-width:100%;
@@ -761,3 +958,21 @@ footer{
         font-size:18px;
     }
 }
+@media (max-width: 768px) {
+    header { padding: 15px 25px; }
+    .logo { font-size: 24px; }
+    nav { display: none; }
+    
+    .hero-text { padding: 40px 20px; border-radius: 20px; }
+    .hero h1 { font-size: 42px; letter-spacing: 4px; }
+    
+    .spot {
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 30px;
+    }
+    .spot img { width: 100%; transform: none; }
+    .spot-text h2 { font-size: 32px; }
+    .link-button { width: 100%; font-size: 18px; padding: 15px; }
+}
+
