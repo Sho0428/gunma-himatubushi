@@ -28,8 +28,7 @@ body{
     width: 100%;
     height: 100%;
 
-    background: rgba(0,0,0,0.4);
-
+    background: rgba(0, 80, 70, 0.5);
     display: flex;
 
     flex-direction: column;
@@ -129,10 +128,9 @@ body{
 
     line-height: 1.8;
 }
-
-/* フッター */
+/*フッター*/
 footer{
-    background: #3e2723;
+    background: #005046;
 
     color: white;
 
