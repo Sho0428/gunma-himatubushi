@@ -23,7 +23,7 @@ body{
     position: relative;
 }
 
-/* オーバーレイ */
+/* 黒の透過 */
 .overlay{
     width: 100%;
     height: 100%;
@@ -83,7 +83,8 @@ body{
     flex-wrap: wrap;
 }
 
-/* リンク */
+
+/* リンク装飾を消す */
 .shop-link{
     text-decoration: none;
 
@@ -96,7 +97,7 @@ body{
 .shop-card{
     width: 320px;
 
-    background: #fffaf5;
+    background: white;
 
     border-radius: 20px;
 
@@ -164,11 +165,4 @@ footer{
     .shops h2{
         font-size: 35px;
     }
-
-    .shop-card{
-        width: 100%;
-    }
 }
-
-
-
