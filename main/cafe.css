@@ -1,0 +1,282 @@
+/* css/style.css */
+
+/* リセット */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全体 */
+body{
+    font-family: 'Poppins', sans-serif;
+
+    background: #f5f1ea;
+
+    color: #3e3e3e;
+}
+
+/* ヘッダー */
+header{
+    background: #4e342e;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 50px;
+}
+
+.logo{
+    font-size: 32px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+nav ul{
+    display: flex;
+
+    list-style: none;
+}
+
+nav li{
+    margin-left: 30px;
+}
+
+nav a{
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+nav a:hover{
+    color: #d7b899;
+}
+
+/* メイン */
+.hero{
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 80px 10%;
+
+    min-height: 90vh;
+}
+
+.hero-text h1{
+    font-size: 70px;
+
+    color: #4e342e;
+
+    margin-bottom: 20px;
+
+    line-height: 1.2;
+}
+
+.hero-text p{
+    font-size: 20px;
+
+    margin-bottom: 30px;
+
+    line-height: 1.8;
+
+    color: #6d6d6d;
+}
+
+/* ボタン */
+button{
+    background: #8d6e63;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 35px;
+
+    font-size: 18px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #6d4c41;
+
+    transform: scale(1.05);
+}
+
+/* メイン画像 */
+.hero-image img{
+    width: 500px;
+}
+
+/* メニュー */
+.menu{
+    padding: 100px 10%;
+
+    text-align: center;
+}
+
+.menu h2{
+    font-size: 50px;
+
+    margin-bottom: 50px;
+
+    color: #4e342e;
+}
+
+.menu-container{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+/* カード */
+.card{
+    background: white;
+
+    width: 300px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.card img{
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+}
+
+.card h3{
+    margin-top: 20px;
+
+    font-size: 25px;
+
+    color: #4e342e;
+}
+
+.card p{
+    margin: 15px 0 25px;
+
+    font-size: 20px;
+
+    color: #8d6e63;
+}
+
+/* おすすめセット */
+.special{
+    background: #6d4c41;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 100px 20px;
+}
+
+.special h2{
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.special p{
+    font-size: 22px;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+}
+
+/* アクセス */
+.access{
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.access h2{
+    font-size: 45px;
+
+    margin-bottom: 30px;
+
+    color: #4e342e;
+}
+
+.access p{
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+    color: #5c5c5c;
+}
+
+/* フッター */
+footer{
+    background: #3e2723;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* レスポンシブ */
+@media(max-width: 900px){
+
+    header{
+        flex-direction: column;
+    }
+
+    nav ul{
+        margin-top: 20px;
+    }
+
+    .hero{
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-text h1{
+        font-size: 50px;
+    }
+
+    .hero-image img{
+        width: 100%;
+
+        max-width: 400px;
+
+        margin-top: 40px;
+    }
+}
