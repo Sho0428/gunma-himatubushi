@@ -16,7 +16,7 @@ body{
 
 /* メイン画像 */
 .hero{
-    height: 50vh;
+    height: 70vh;
 
     background: url("../images/shop1.jpg") center/cover;
 
@@ -42,7 +42,9 @@ body{
 }
 
 .overlay h1{
-    font-size: 60px;
+    font-size: 70px;
+
+    margin-bottom: 20px;
 
     letter-spacing: 3px;
 }
