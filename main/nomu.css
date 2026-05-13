@@ -26,6 +26,57 @@ body{
 }
 
 /* =========================
+   両サイドの帯
+========================= */
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+
+    width:28px;
+
+    height:100vh;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #111,
+        #ff9900,
+        #111
+    );
+
+    box-shadow:
+    0 0 15px rgba(255,140,0,0.35);
+}
+
+/* 左帯 */
+body::before{
+
+    left:0;
+
+    border-right:
+    2px solid rgba(255,255,255,0.1);
+}
+
+/* 右帯 */
+body::after{
+
+    right:0;
+
+    border-left:
+    2px solid rgba(255,255,255,0.1);
+}
+
+/* =========================
    ヘッダー
 ========================= */
 
