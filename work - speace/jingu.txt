@@ -1,1 +1,92 @@
-a
+<a href="shousai/takasaki-leisure.html" class="shop-link">
+
+                <div class="shop-card">
+
+                <img src="images/shop4.jpg" alt="">
+
+                        <div class="shop-text">
+
+                            <h3>JAPANESE DINING</h3>
+
+                            <p>
+                            和モダン空間で
+                            本格和食を楽しめるお店。
+                            </p>
+
+                        </div>
+
+                </div>
+
+            </a>
+
+
+
+div class="shop-card">
+
+                <img src="images/shop1.jpg" alt="">
+
+                <div class="shop-text">
+
+                    <h3>CAFE TERRACE</h3>
+
+                    <p>
+                        落ち着いた空間で
+                        ゆっくり過ごせる人気カフェ。
+                    </p>
+
+                </div>
+
+            </div>
+
+<div class="shop-card">
+
+                <img src="images/shop2.jpg" alt="">
+
+                <div class="shop-text">
+
+                    <h3>BURGER HOUSE</h3>
+
+                    <p>
+                        ボリューム満点の
+                        ハンバーガー専門店。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+<div class="shop-card">
+
+                <img src="images/shop3.jpg" alt="">
+
+                <div class="shop-text">
+
+                    <h3>ITALIAN KITCHEN</h3>
+
+                    <p>
+                        本格パスタが人気の
+                        イタリアンレストラン。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+<div class="shop-card">
+
+                <img src="images/shop4.jpg" alt="">
+
+                <div class="shop-text">
+
+                    <h3>JAPANESE DINING</h3>
+
+                    <p>
+                        和モダン空間で
+                        本格和食を楽しめるお店。
+                    </p>
+
+                </div>
+
+            </div>
