@@ -10,13 +10,19 @@
 
     <header>
         <div class="logo">TAKASAKI</div>
-        <nav>
+        <nav id="nav-menu">
             <ul>
-                <li><a href="facility\facility.html">施設</a></li>
+                <li><a href="facility/facility.html">施設</a></li>
                 <li><a href="coffe/coffe.html">カフェ</a></li>
                 <li><a href="food/food.html">飲食店</a></li>
             </ul>
         </nav>
+        <!-- ハンバーガーボタン（スマホのみ表示） -->
+        <button class="hamburger" id="hamburger-btn" aria-label="メニューを開く">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section class="hero" id="top">
@@ -35,7 +41,6 @@
         <div class="spot-text">
             <h2>レジャー施設</h2>
             <p>高崎OPAやモントレーなど、<br>駅直結でぶらぶらできるスポットが満載。</p>
-            
             <a href="facility/facility.html" class="link-button">施設一覧を見る</a>
         </div>
     </section>
@@ -45,7 +50,6 @@
         <div class="spot-text">
             <h2>絶景カフェ</h2>
             <p>高崎パスタや駅弁、居酒屋まで。<br>お腹も心も満たされる飲食店をチェック。</p>
-            
             <a href="coffe/coffe.html" class="link-button">カフェ店一覧を見る</a>
         </div>
     </section>
@@ -55,7 +59,6 @@
         <div class="spot-text">
             <h2>どすこいラーメン</h2>
             <p>待ち合わせや、ちょっとした作業に。<br>こだわりのコーヒーと落ち着く空間をご提案。</p>
-            
             <a href="food/food.html" class="link-button">飲食店一覧を見る</a>
         </div>
     </section>
@@ -66,6 +69,25 @@
     </footer>
 
     <a href="#top" class="top-btn">↑</a>
+
+    <script>
+        const btn = document.getElementById('hamburger-btn');
+        const nav = document.getElementById('nav-menu');
+
+        btn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('active', isOpen);
+            btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+        });
+
+        // メニュー内のリンクをタップしたら閉じる
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                btn.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
