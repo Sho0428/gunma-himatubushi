@@ -28,7 +28,7 @@ body{
     width: 100%;
     height: 100%;
 
-    background: rgba(0, 80, 70, 0.5);
+    background: rgba(45, 18, 0, 0.69);
 
     display: flex;
 
@@ -90,7 +90,7 @@ body{
 
     margin-bottom: 20px;
 
-    color: #005046;
+    color: #4e342e;
 }
 
 .text h3{
@@ -98,7 +98,7 @@ body{
 
     margin-bottom: 10px;
 
-    color: #4e342e;
+   color: #4e342e;
 }
 
 .text p{
@@ -126,7 +126,6 @@ body{
         font-size: 30px;
     }
 }
-
 /* =========================
    TOPに戻るボタン
 ========================= */
@@ -178,4 +177,3 @@ body{
     background: orange;
     transform: translateY(-5px);
 }
-
