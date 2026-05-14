@@ -1,34 +1,19 @@
-<div class="shop-container">
-    <a href="shousai/takasaki-leisure.html" class="shop-link">
+shop-card{
+    display: block;
 
-                <img src="images//cafe1.jpg" alt="喫茶コンバル">
+    width: 320px;
 
-                        <div class="shop-text">
+    background: white;
 
-                            <h3>喫茶コンバル</h3>
+    border-radius: 20px;
 
-                            <p>
-                            ※詳細リサーチ待ち。<br>
-                            昭和レトロな雰囲気が楽しめる名店。
-                            </p>
+    overflow: hidden;
 
-                        </div>
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 
-                </div>
+    text-decoration: none;
 
-            </a>
+    color: inherit;
 
-
-
-<div class="shop-container">
-
-            <a href="asunaro.html" class="shop-card">
-                <img src="images/cafe1.jpg" alt="喫茶コンバル">
-                
-                    <h3>喫茶コンバル</h3>
-                    <p>
-                        ※詳細リサーチ待ち。<br>
-                        昭和レトロな雰囲気が楽しめる名店。
-                    </p>
-                </div>
-            </a>
+    transition: 0.3s;
+}

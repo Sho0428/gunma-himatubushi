@@ -83,12 +83,18 @@ body{
     flex-wrap: wrap;
 }
 
+
+/* リンク装飾を消す */
+.shop-link{
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+}
+
 /* カード */
 .shop-card{
-    display: block;
-
-    width: 320px;
-
     background: white;
 
     border-radius: 20px;
