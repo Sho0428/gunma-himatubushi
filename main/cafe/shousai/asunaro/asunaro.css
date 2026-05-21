@@ -1,12 +1,19 @@
-/* リセット */
+/* =========================
+   リセット
+========================= */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 全体 */
+/* =========================
+   全体
+========================= */
+
 body{
+
     font-family: 'Poppins', sans-serif;
 
     background: #f5f1ea;
@@ -14,19 +21,14 @@ body{
     color: #333;
 }
 
-/* メイン画像 */
-.hero{
-    height: 70vh;
+/* =========================
+   タイトル
+========================= */
 
-    background: url("../images/shop1.jpg") center/cover;
-
-    position: relative;
-}
-
-/* 黒透過 */
 .overlay{
+
     width: 100%;
-    height: 100%;
+    height: 220px;
 
     background: rgba(45, 18, 0, 0.69);
 
@@ -42,50 +44,143 @@ body{
 }
 
 .overlay h1{
-    font-size: 70px;
 
-    margin-bottom: 20px;
+    font-size: 70px;
 
     letter-spacing: 3px;
 }
 
-/* 詳細エリア */
+/* =========================
+   詳細
+========================= */
+
 .detail{
+
     padding: 80px 8%;
 }
 
-/* 白カード */
+/* =========================
+   横並び
+========================= */
+
 .content{
+
+    display: flex;
+
+    gap: 40px;
+
+    align-items: flex-start;
+}
+
+/* 左側 */
+
+.left-area{
+
+    width: 50%;
+
+    position: sticky;
+
+    top: 20px;
+}
+
+/* =========================
+   スライダー
+========================= */
+
+.slider{
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #ddd;
+}
+
+/* スライド全体 */
+
+.slides{
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.5s ease;
+}
+
+/* 各画像 */
+
+.slide{
+
+    width: 100%;
+    height: 100%;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    cursor: pointer;
+}
+
+/* =========================
+   一覧ボタン
+========================= */
+
+.gallery-btn{
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 20px auto 0 auto;
+
+    padding: 14px 28px;
+
+    background: #4e342e;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.gallery-btn:hover{
+
+    background: orange;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   テキスト
+========================= */
+
+.text{
+
+    flex: 1;
+
     background: white;
 
     border-radius: 20px;
 
     padding: 40px;
 
-    display: flex;
-
-    gap: 40px;
-
-    align-items: center;
-
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* 画像 */
-.content img{
-    width: 45%;
-
-    border-radius: 20px;
-
-    object-fit: cover;
-}
-
-/* テキスト */
-.text{
-    flex: 1;
-}
-
 .text h2{
+
     font-size: 40px;
 
     margin-bottom: 20px;
@@ -94,86 +189,245 @@ body{
 }
 
 .text h3{
+
     margin-top: 30px;
 
     margin-bottom: 10px;
 
-   color: #4e342e;
+    color: #4e342e;
 }
 
 .text p{
+
     line-height: 1.8;
 
     color: #666;
 }
 
-/* スマホ対応 */
-@media(max-width: 900px){
-
-    .content{
-        flex-direction: column;
-    }
-
-    .content img{
-        width: 100%;
-    }
-
-    .overlay h1{
-        font-size: 40px;
-    }
-
-    .text h2{
-        font-size: 30px;
-    }
-}
 /* =========================
-   TOPに戻るボタン
+   矢印ボタン
 ========================= */
+
+.prev,
+.next{
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.5);
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    font-size: 22px;
+
+    transition: 0.3s;
+}
+
+.prev:hover,
+.next:hover{
+
+    background: orange;
+}
+
+.prev{
+
+    left: 15px;
+}
+
+.next{
+
+    right: 15px;
+}
+
+/* =========================
+   TOPボタン
+========================= */
+
 .top-btn{
+
     position: fixed;
+
     bottom: 30px;
     right: 30px;
+
     width: 55px;
     height: 55px;
+
     background: #333;
+
     color: white;
+
     text-decoration: none;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     border-radius: 50%;
+
     font-size: 24px;
+
     z-index: 999;
+
     transition: 0.3s;
 }
 
 .top-btn:hover{
+
     background: orange;
+
     transform: translateY(-5px);
 }
 
 /* =========================
-   HOMEに戻るボタン
+   HOMEボタン
 ========================= */
+
 .home-btn{
+
     position: fixed;
-    bottom: 95px; /* TOPボタンの上に配置 */
+
+    bottom: 95px;
     right: 30px;
+
     width: 55px;
     height: 55px;
+
     background: #333;
+
     color: white;
+
     text-decoration: none;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     border-radius: 50%;
+
     font-size: 24px;
+
     z-index: 999;
+
     transition: 0.3s;
 }
 
 .home-btn:hover{
+
     background: orange;
+
     transform: translateY(-5px);
+}
+
+/* =========================
+   拡大表示
+========================= */
+
+.lightbox{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.lightbox-img{
+
+    max-width: 95%;
+    max-height: 90%;
+
+    border-radius: 10px;
+}
+
+.close{
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   スマホ対応
+========================= */
+
+@media(max-width: 900px){
+
+    .content{
+
+        flex-direction: column;
+    }
+
+    .left-area{
+
+        width: 100%;
+
+        position: sticky;
+
+        top: 80px;
+
+        z-index: 100;
+    }
+
+    /* タイトル固定 */
+
+    .overlay{
+
+        position: sticky;
+
+        top: 0;
+
+        height: 80px;
+
+        z-index: 200;
+    }
+
+    .overlay h1{
+
+        font-size: 28px;
+    }
+
+    .text{
+
+        width: 100%;
+    }
+
+    .text h2{
+
+        font-size: 30px;
+    }
 }

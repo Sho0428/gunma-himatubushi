@@ -7,26 +7,53 @@
 
     <link rel="stylesheet" href="asunaro.css">
 </head>
+
 <body>
 
-    <!-- メイン画像 -->
+    <!-- タイトル -->
+    <div class="overlay">
 
-        <div class="overlay">
-
-            <h1>
+        <h1>
             Cafeあすなろ
-            </h1>
+        </h1>
 
-        </div>
-
+    </div>
 
     <!-- 詳細 -->
     <section class="detail">
 
         <div class="content">
 
-            <img src="../../img/cafe1.jpg" alt="">
+            <!-- 左側 -->
+            <div class="left-area">
 
+                <!-- スライダー -->
+                <div class="slider">
+
+                    <div class="slides">
+
+                        <img src="../../img/cafe1.jpg" class="slide" alt="">
+                        <img src="../../img/cafe2.jpg" class="slide" alt="">
+                        <img src="../../img/cafe3.jpg" class="slide" alt="">
+
+                        <!-- 一枚目を複製 -->
+                        <img src="../../img/cafe1.jpg" class="slide" alt="">
+
+                    </div>
+
+                    <button class="prev">❮</button>
+                    <button class="next">❯</button>
+
+                </div>
+
+                <!-- 一覧ボタン -->
+                <a href="#" class="gallery-btn">
+                    一覧で見る
+                </a>
+
+            </div>
+
+            <!-- テキスト -->
             <div class="text">
 
                 <h2>施設紹介</h2>
@@ -40,12 +67,20 @@
                 <p>
                     10時00分~20時00分
                 </p>
-                <p>月曜定休日</p>
+
+                <p>
+                    月曜定休日
+                </p>
 
                 <h3>住所</h3>
-                
-                <p>〒370-0827</p>
-                <p>群馬県高崎市鞘町73</p>
+
+                <p>
+                    〒370-0827
+                </p>
+
+                <p>
+                    群馬県高崎市鞘町73
+                </p>
 
                 <h3>電話番号</h3>
 
@@ -59,10 +94,164 @@
 
     </section>
 
-        <!-- TOPに戻るボタン -->
+    <!-- TOPに戻る -->
     <a href="#" class="top-btn">↑</a>
 
-    <!-- HOMEに戻るボタン -->
+    <!-- HOMEに戻る -->
     <a href="../../../nomu.html" class="home-btn">🏠</a>
+
+    <!-- 拡大表示 -->
+    <div class="lightbox">
+
+        <span class="close">×</span>
+
+        <img class="lightbox-img" src="" alt="">
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        const slides = document.querySelector(".slides");
+        const slide = document.querySelectorAll(".slide");
+
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+
+        let current = 0;
+
+        const totalSlides = slide.length;
+
+        let autoSlide;
+
+        // スライド更新
+        function updateSlide() {
+
+            slides.style.transition = "transform 0.5s ease";
+
+            slides.style.transform =
+                `translateX(-${current * 100}%)`;
+        }
+
+        // 自動スライド開始
+        function startAutoSlide(){
+
+            autoSlide = setInterval(() => {
+
+                nextSlide(false);
+
+            }, 4000);
+        }
+
+        // 自動スライドリセット
+        function resetAutoSlide(){
+
+            clearInterval(autoSlide);
+
+            startAutoSlide();
+        }
+
+        // 次へ
+        function nextSlide(reset = true) {
+
+            current++;
+
+            updateSlide();
+
+            // 最後の複製画像
+            if(current === totalSlides - 1){
+
+                setTimeout(() => {
+
+                    slides.style.transition = "none";
+
+                    current = 0;
+
+                    slides.style.transform =
+                        `translateX(0%)`;
+
+                }, 500);
+            }
+
+            // 手動操作時のみリセット
+            if(reset){
+                resetAutoSlide();
+            }
+        }
+
+        // 前へ
+        function prevSlide() {
+
+            if(current <= 0){
+
+                current = totalSlides - 2;
+
+                slides.style.transition = "none";
+
+                slides.style.transform =
+                    `translateX(-${current * 100}%)`;
+
+                setTimeout(() => {
+
+                    current--;
+
+                    updateSlide();
+
+                }, 10);
+
+            }else{
+
+                current--;
+
+                updateSlide();
+            }
+
+            resetAutoSlide();
+        }
+
+        // ボタン
+        nextBtn.addEventListener("click", () => nextSlide());
+
+        prevBtn.addEventListener("click", prevSlide);
+
+        // 開始
+        startAutoSlide();
+
+        // =========================
+        // 拡大表示
+        // =========================
+
+        const lightbox = document.querySelector(".lightbox");
+        const lightboxImg = document.querySelector(".lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        // 画像クリック
+        slide.forEach(img => {
+
+            img.addEventListener("click", () => {
+
+                lightbox.style.display = "flex";
+
+                lightboxImg.src = img.src;
+            });
+        });
+
+        // 閉じる
+        closeBtn.addEventListener("click", () => {
+
+            lightbox.style.display = "none";
+        });
+
+        // 背景クリックでも閉じる
+        lightbox.addEventListener("click", (e) => {
+
+            if(e.target === lightbox){
+
+                lightbox.style.display = "none";
+            }
+        });
+
+    </script>
+
 </body>
 </html>
