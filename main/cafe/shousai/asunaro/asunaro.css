@@ -431,3 +431,40 @@ body{
         font-size: 30px;
     }
 }
+
+/* =========================
+   ギャラリー一覧
+========================= */
+
+.gallery{
+
+    display: none;
+
+    margin-top: 25px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+/* 一覧画像 */
+
+.gallery-img{
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.gallery-img:hover{
+
+    transform: scale(1.03);
+}

@@ -50,6 +50,15 @@
                 <a href="#" class="gallery-btn">
                     一覧で見る
                 </a>
+                <!-- 一覧表示 -->
+
+                <div class="gallery">
+
+                    <img src="../../img/cafe1.jpg" class="gallery-img" alt="">
+                    <img src="../../img/cafe2.jpg" class="gallery-img" alt="">
+                    <img src="../../img/cafe3.jpg" class="gallery-img" alt="">
+
+                </div>
 
             </div>
 
@@ -98,7 +107,7 @@
     <a href="#" class="top-btn">↑</a>
 
     <!-- HOMEに戻る -->
-    <a href="../../../nomu.html" class="home-btn">🏠</a>
+    <a href="../../../index.html" class="home-btn">🏠</a>
 
     <!-- 拡大表示 -->
     <div class="lightbox">
@@ -251,6 +260,48 @@
             }
         });
 
+                // =========================
+        // 一覧表示
+        // =========================
+
+        const galleryBtn = document.querySelector(".gallery-btn");
+        const gallery = document.querySelector(".gallery");
+
+        let galleryOpen = false;
+
+        galleryBtn.addEventListener("click", (e) => {
+
+            e.preventDefault();
+
+            galleryOpen = !galleryOpen;
+
+            if(galleryOpen){
+
+                gallery.style.display = "grid";
+
+                galleryBtn.textContent = "閉じる";
+
+            }else{
+
+                gallery.style.display = "none";
+
+                galleryBtn.textContent = "一覧で見る";
+            }
+        });
+
+        // 一覧画像でも拡大
+        const galleryImgs = document.querySelectorAll(".gallery-img");
+
+        galleryImgs.forEach(img => {
+
+            img.addEventListener("click", () => {
+
+                lightbox.style.display = "flex";
+
+                lightboxImg.src = img.src;
+            });
+        });
+        
     </script>
 
 </body>
