@@ -72,15 +72,13 @@ body{
     align-items: flex-start;
 }
 
-/* 左側 */
+/* =========================
+   左側
+========================= */
 
 .left-area{
 
     width: 50%;
-
-    position: sticky;
-
-    top: 20px;
 }
 
 /* =========================
@@ -89,7 +87,9 @@ body{
 
 .slider{
 
-    position: relative;
+    position: sticky;
+
+    top: 20px;
 
     width: 100%;
 
@@ -100,6 +100,8 @@ body{
     border-radius: 20px;
 
     background: #ddd;
+
+    z-index: 10;
 }
 
 /* スライド全体 */
@@ -153,6 +155,10 @@ body{
     font-size: 16px;
 
     transition: 0.3s;
+
+    position: relative;
+
+    z-index: 1;
 }
 
 .gallery-btn:hover{
@@ -160,6 +166,47 @@ body{
     background: orange;
 
     transform: translateY(-3px);
+}
+
+/* =========================
+   ギャラリー一覧
+========================= */
+
+.gallery{
+
+    display: none;
+
+    margin-top: 25px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* 一覧画像 */
+
+.gallery-img{
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.gallery-img:hover{
+
+    transform: scale(1.03);
 }
 
 /* =========================
@@ -359,6 +406,8 @@ body{
     z-index: 9999;
 }
 
+/* 拡大画像 */
+
 .lightbox-img{
 
     max-width: 95%;
@@ -366,6 +415,8 @@ body{
 
     border-radius: 10px;
 }
+
+/* 閉じる */
 
 .close{
 
@@ -382,6 +433,59 @@ body{
 }
 
 /* =========================
+   拡大表示 矢印
+========================= */
+
+.lightbox-prev,
+.lightbox-next{
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.2);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* hover */
+
+.lightbox-prev:hover,
+.lightbox-next:hover{
+
+    background: rgba(255,255,255,0.4);
+}
+
+/* 左 */
+
+.lightbox-prev{
+
+    left: 30px;
+}
+
+/* 右 */
+
+.lightbox-next{
+
+    right: 30px;
+}
+
+/* =========================
    スマホ対応
 ========================= */
 
@@ -395,6 +499,11 @@ body{
     .left-area{
 
         width: 100%;
+    }
+
+    /* スライダー固定 */
+
+    .slider{
 
         position: sticky;
 
@@ -430,41 +539,4 @@ body{
 
         font-size: 30px;
     }
-}
-
-/* =========================
-   ギャラリー一覧
-========================= */
-
-.gallery{
-
-    display: none;
-
-    margin-top: 25px;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
-}
-
-/* 一覧画像 */
-
-.gallery-img{
-
-    width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.gallery-img:hover{
-
-    transform: scale(1.03);
 }
