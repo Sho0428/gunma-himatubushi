@@ -30,7 +30,7 @@ body{
     width: 100%;
     height: 220px;
 
-    background: rgba(45, 18, 0, 0.69);
+    background: rgb(82, 58, 41);
 
     display: flex;
 
@@ -463,22 +463,16 @@ body{
     transition: 0.3s;
 }
 
-/* hover */
-
 .lightbox-prev:hover,
 .lightbox-next:hover{
 
     background: rgba(255,255,255,0.4);
 }
 
-/* 左 */
-
 .lightbox-prev{
 
     left: 30px;
 }
-
-/* 右 */
 
 .lightbox-next{
 
@@ -501,28 +495,22 @@ body{
         width: 100%;
     }
 
-    /* スライダー固定 */
-
-    .slider{
-
-        position: sticky;
-
-        top: 80px;
-
-        z-index: 100;
-    }
-
-    /* タイトル固定 */
+    /* =========================
+       タイトル固定
+    ========================= */
 
     .overlay{
 
-        position: sticky;
+        position: fixed;
 
         top: 0;
+        left: 0;
+
+        width: 100%;
 
         height: 80px;
 
-        z-index: 200;
+        z-index: 300;
     }
 
     .overlay h1{
@@ -530,13 +518,67 @@ body{
         font-size: 28px;
     }
 
+    /* =========================
+       スライダー固定
+    ========================= */
+
+    .slider{
+
+        position: fixed;
+
+        top: 80px;
+        left: 0;
+
+        width: 100%;
+
+        border-radius: 0;
+
+        z-index: 200;
+    }
+
+    /* =========================
+       文章側
+    ========================= */
+
     .text{
 
         width: 100%;
+
+        margin-top: calc(100vw * 9 / 16 + 120px);
+
     }
 
     .text h2{
 
         font-size: 30px;
+    }
+
+    /* =========================
+       ギャラリー
+    ========================= */
+
+    .gallery{
+
+        margin-top: 20px;
+    }
+
+    /* =========================
+       TOPボタン
+    ========================= */
+
+    .top-btn{
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 20px;
+    }
+
+    .home-btn{
+
+        width: 50px;
+        height: 50px;
+
+        font-size: 20px;
     }
 }
