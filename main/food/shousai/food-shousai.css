@@ -488,13 +488,25 @@ body{
         flex-direction: column;
     }
 
-    /* 左側全体 */
+    /* =========================
+       左側全体
+    ========================= */
 
     .left-area{
 
         width: 100%;
+    }
 
-        padding-top: calc(100vw * 9 / 16 + 100px);
+    /* =========================
+       425px以下だけ余白追加
+    ========================= */
+
+    @media(max-width: 425px){
+
+        .left-area{
+
+            padding-top: calc(100vw * 9 / 16 + 100px);
+        }
     }
 
     /* =========================
@@ -521,21 +533,37 @@ body{
     }
 
     /* =========================
-       スライダー固定
+       スライダー
     ========================= */
 
     .slider{
 
-        position: fixed;
-
-        top: 80px;
-        left: 0;
+        position: relative;
 
         width: 100%;
 
         border-radius: 0;
 
-        z-index: 200;
+        overflow: hidden;
+    }
+
+    /* =========================
+       425px以下だけ固定
+    ========================= */
+
+    @media(max-width: 425px){
+
+        .slider{
+
+            position: fixed;
+
+            top: 80px;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 200;
+        }
     }
 
     /* =========================
@@ -563,8 +591,13 @@ body{
 
     .gallery-btn{
 
-    margin-top: -70px;
+        position: relative;
+
+        z-index: 250;
+
+        margin-top: 20px;
     }
+
     /* =========================
        TOPボタン
     ========================= */
