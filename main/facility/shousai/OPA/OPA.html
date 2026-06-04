@@ -30,16 +30,7 @@
                 <!-- スライダー -->
                 <div class="slider">
 
-                    <div class="slides">
-
-                        <img src="img/cafe1.jpg" class="slide" alt="">
-                        <img src="img/cafe2.jpg" class="slide" alt="">
-                        <img src="img/cafe3.jpg" class="slide" alt="">
-
-                        <!-- 一枚目を複製 -->
-                        <img src="img/cafe1.jpg" class="slide" alt="">
-
-                    </div>
+                    <div class="slides"></div>
 
                     <button class="prev">❮</button>
                     <button class="next">❯</button>
@@ -52,13 +43,7 @@
                 </a>
 
                 <!-- 一覧表示 -->
-                <div class="gallery">
-
-                    <img src="img/cafe1.jpg" class="gallery-img" alt="">
-                    <img src="img/cafe2.jpg" class="gallery-img" alt="">
-                    <img src="img/cafe3.jpg" class="gallery-img" alt="">
-
-                </div>
+                <div class="gallery"></div>
 
             </div>
 
@@ -117,6 +102,61 @@
 
     <!-- JavaScript -->
     <script>
+        // =========================
+        // 画像設定
+        // =========================
+
+        const imageCount = 25;
+        const imageFolder = "img/cafe";
+
+        // =========================
+        // 画像リスト作成
+        // =========================
+
+        const allImages = [];
+
+        for(let i = 1; i <= imageCount; i++){
+            allImages.push(`${imageFolder}${i}.jpg`);
+        }
+
+        // =========================
+        // スライダー・ギャラリー生成
+        // =========================
+
+        const slidesContainer = document.querySelector(".slides");
+        const galleryContainer = document.querySelector(".gallery");
+
+        allImages.forEach(src => {
+
+            // スライダー
+            const slideImg = document.createElement("img");
+
+            slideImg.src = src;
+            slideImg.className = "slide";
+
+            slidesContainer.appendChild(slideImg);
+
+            // ギャラリー
+            const galleryImg = document.createElement("img");
+
+            galleryImg.src = src;
+            galleryImg.className = "gallery-img";
+
+            galleryContainer.appendChild(galleryImg);
+        });
+
+        // 無限ループ用に1枚目を複製
+
+        const clone = document.createElement("img");
+
+        clone.src = allImages[0];
+        clone.className = "slide";
+
+        slidesContainer.appendChild(clone);
+
+        // =========================
+        // スライダー
+        // =========================
 
         const slides = document.querySelector(".slides");
         const slide = document.querySelectorAll(".slide");
@@ -176,7 +216,6 @@
 
             updateSlide();
 
-            // 最後の複製画像
             if(current === totalSlides - 1){
 
                 setTimeout(() => {
@@ -191,7 +230,6 @@
                 }, 500);
             }
 
-            // 手動操作時のみリセット
             if(reset){
                 resetAutoSlide();
             }
@@ -231,11 +269,13 @@
         }
 
         // ボタン
+
         nextBtn.addEventListener("click", () => nextSlide());
 
         prevBtn.addEventListener("click", prevSlide);
 
         // 開始
+
         startAutoSlide();
 
         // =========================
@@ -278,25 +318,19 @@
         const lightboxPrev = document.querySelector(".lightbox-prev");
         const lightboxNext = document.querySelector(".lightbox-next");
 
-        // 画像一覧
-        const allImages = [
-            "img/cafe1.jpg",
-            "img/cafe2.jpg",
-            "img/cafe3.jpg"
-        ];
-
         let currentLightbox = 0;
 
         // 表示更新
+
         function updateLightbox(){
 
             lightboxImg.src = allImages[currentLightbox];
         }
 
         // スライダー画像クリック
+
         slide.forEach((img, index) => {
 
-            // 複製画像除外
             if(index >= allImages.length) return;
 
             img.addEventListener("click", () => {
@@ -310,7 +344,9 @@
         });
 
         // 一覧画像クリック
-        const galleryImgs = document.querySelectorAll(".gallery-img");
+
+        const galleryImgs =
+            document.querySelectorAll(".gallery-img");
 
         galleryImgs.forEach((img, index) => {
 
@@ -325,6 +361,7 @@
         });
 
         // 次へ
+
         lightboxNext.addEventListener("click", () => {
 
             currentLightbox++;
@@ -338,6 +375,7 @@
         });
 
         // 前へ
+
         lightboxPrev.addEventListener("click", () => {
 
             currentLightbox--;
@@ -351,12 +389,14 @@
         });
 
         // 閉じる
+
         closeBtn.addEventListener("click", () => {
 
             lightbox.style.display = "none";
         });
 
         // 背景クリック
+
         lightbox.addEventListener("click", (e) => {
 
             if(e.target === lightbox){
@@ -364,8 +404,8 @@
                 lightbox.style.display = "none";
             }
         });
+        </script>
 
-    </script>
 
 </body>
 </html>
