@@ -562,6 +562,10 @@ body{
 
             width: 100%;
 
+            height: calc(100vw * 9 / 16);
+
+            border-radius: 0;
+
             z-index: 200;
         }
     }
