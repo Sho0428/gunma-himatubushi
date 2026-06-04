@@ -505,7 +505,7 @@ body{
 
         .left-area{
 
-            padding-top: calc(100vw * 9 / 16 + 100px);
+            padding-top: calc(80px + 100vw * 9 / 16 + 20px);
         }
     }
 
@@ -562,6 +562,10 @@ body{
 
             width: 100%;
 
+            height: calc(100vw * 9 / 16);
+
+            border-radius: 0;
+
             z-index: 200;
         }
     }
@@ -590,10 +594,6 @@ body{
     }
 
     .gallery-btn{
-
-        position: relative;
-
-        z-index: 250;
 
         margin-top: 20px;
     }

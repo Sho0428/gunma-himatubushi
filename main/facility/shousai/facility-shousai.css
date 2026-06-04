@@ -591,11 +591,8 @@ body{
 
     .gallery-btn{
 
-        position: relative;
-
-        z-index: 250;
-
         margin-top: 20px;
+
     }
 
     /* =========================
