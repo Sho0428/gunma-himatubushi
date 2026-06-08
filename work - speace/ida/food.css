@@ -1,221 +1,712 @@
-/* リセット */
+/* =========================
+   Google Fonts
+========================= */
+/*
+<head>に追加
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+*/
+
+/* =========================
+   リセット
+========================= */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* 全体 */
+html{
+    scroll-behavior:smooth;
+}
+
+/* =========================
+   カラー
+========================= */
+:root{
+    --bg:#faf6f2;
+
+    --card:rgba(255,255,255,.82);
+
+    --accent:#ff7b54;
+    --accent-light:#ffb26b;
+
+    --neon:#00d4ff;
+
+    --text:#2b2b2b;
+    --sub:#666;
+}
+
+/* =========================
+   全体
+========================= */
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 
-    background: #f5f1ea;
+    color:var(--text);
 
-    color: #333;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,123,84,.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,178,107,.12),
+    transparent 35%),
+
+    radial-gradient(circle at center,
+    rgba(0,212,255,.08),
+    transparent 45%),
+
+    var(--bg);
+
+    position:relative;
 }
 
-/* メイン画像 */
+/* 背景模様 */
+body::before{
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(
+    rgba(255,255,255,.5) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.5) 1px,
+    transparent 1px);
+
+    background-size:45px 45px;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+/* =========================
+   メイン画像
+========================= */
 .hero{
-    height: 70vh;
+    height:92vh;
 
-    background: url("../images/main.jpg") center/cover;
+    margin:25px;
 
-    position: relative;
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.15);
 }
 
-/* 黒の透過 */
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.55)),
+
+    url("../images/main.jpg")
+    center/cover;
+}
+
+/* 光る枠 */
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+    0 0 20px rgba(0,212,255,.15);
+
+    pointer-events:none;
+}
+
+/* =========================
+   タイトル
+========================= */
 .overlay{
-    width: 100%;
-    height: 100%;
+    position:relative;
 
-    background: hsla(13, 61%, 44%, 0.822);
+    z-index:10;
 
-    display: flex;
+    height:100%;
 
-    flex-direction: column;
+    display:flex;
 
-    justify-content: center;
+    flex-direction:column;
 
-    align-items: center;
+    justify-content:center;
 
-    text-align: center;
+    align-items:center;
 
-    color: white;
+    text-align:center;
+
+    color:white;
 }
 
 .overlay h1{
-    font-size: 70px;
+    font-family:'Cormorant Garamond',serif;
 
-    margin-bottom: 20px;
+    font-size:120px;
 
-    letter-spacing: 3px;
+    font-weight:700;
+
+    letter-spacing:8px;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 15px rgba(0,212,255,.4),
+    0 0 30px rgba(255,123,84,.2);
 }
 
 .overlay p{
-    font-size: 24px;
+    font-size:24px;
 
-    line-height: 1.8;
+    line-height:2;
+
+    letter-spacing:2px;
 }
 
-/* 店舗一覧 */
+/* =========================
+   店舗一覧
+========================= */
 .shops{
-    padding: 100px 8%;
+    padding:120px 8%;
 }
 
 .shops h2{
-    text-align: center;
+    text-align:center;
 
-    font-size: 45px;
+    font-family:'Cormorant Garamond',serif;
 
-    margin-bottom: 60px;
+    font-size:65px;
 
-    color: #2e2d2d;
+    margin-bottom:90px;
+
+    color:var(--text);
 }
 
-/* カード並び */
+.shops h2::after{
+    content:"";
+
+    display:block;
+
+    width:120px;
+
+    height:4px;
+
+    margin:20px auto;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--accent),
+    var(--neon));
+}
+
+/* =========================
+   カード並び
+========================= */
 .shop-container{
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    gap: 40px;
+    gap:40px;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 }
 
-
-/* リンク装飾を消す */
 .shop-link{
-    text-decoration: none;
+    text-decoration:none;
 
-    color: inherit;
-
-    display: block;
+    color:inherit;
 }
 
-/* カード */
+/* =========================
+   カード
+========================= */
 .shop-card{
-    width: 320px;
+    width:320px;
 
-    background: white;
+    background:var(--card);
 
-    border-radius: 20px;
+    backdrop-filter:blur(18px);
 
-    overflow: hidden;
+    border-radius:28px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow:hidden;
 
-    transition: 0.3s;
+    position:relative;
+
+    border:
+    1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    transition:.4s;
+}
+
+/* 内側枠 */
+.shop-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:10px;
+    left:10px;
+    right:10px;
+    bottom:10px;
+
+    border-radius:18px;
+
+    border:
+    1px solid rgba(255,123,84,.12);
+
+    pointer-events:none;
 }
 
 .shop-card:hover{
-    transform: translateY(-10px);
+    transform:
+    translateY(-12px);
+
+    box-shadow:
+    0 0 25px rgba(0,212,255,.2),
+    0 0 40px rgba(255,123,84,.15),
+    0 20px 40px rgba(0,0,0,.12);
 }
 
-/* 画像 */
+/* =========================
+   画像
+========================= */
 .shop-card img{
-    width: 100%;
+    width:100%;
 
-    height: 220px;
+    height:220px;
 
-    object-fit: cover;
+    object-fit:cover;
+
+    transition:.5s;
 }
 
-/* テキスト */
+.shop-card:hover img{
+    transform:scale(1.08);
+}
+
+/* =========================
+   テキスト
+========================= */
 .shop-text{
-    padding: 25px;
+    padding:25px;
 }
 
 .shop-text h3{
-    font-size: 28px;
+    color:var(--accent);
 
-    margin-bottom: 15px;
+    font-size:28px;
 
-    color: #f73a06;
+    margin-bottom:15px;
+}
+
+.shop-text h3::after{
+    content:"";
+
+    display:block;
+
+    width:60px;
+
+    height:3px;
+
+    margin-top:10px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--accent),
+    var(--neon));
 }
 
 .shop-text p{
-    color: #666;
+    color:var(--sub);
 
-    line-height: 1.8;
-}
-
-/* フッター */
-footer{
-    background: #a85d49;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 20px;
-}
-
-/* スマホ対応 */
-@media(max-width: 900px){
-
-    .overlay h1{
-        font-size: 45px;
-    }
-
-    .overlay p{
-        font-size: 18px;
-    }
-
-    .shops h2{
-        font-size: 35px;
-    }
+    line-height:1.9;
 }
 
 /* =========================
-   TOPに戻るボタン
+   フッター
+========================= */
+footer{
+    margin-top:100px;
+
+    background:#1f1f1f;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px;
+}
+
+footer::before{
+    content:"";
+
+    display:block;
+
+    width:120px;
+
+    height:2px;
+
+    margin:0 auto 20px;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--accent),
+    var(--neon));
+}
+
+/* =========================
+   TOPボタン
 ========================= */
 .top-btn{
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 55px;
-    height: 55px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 24px;
-    z-index: 999;
-    transition: 0.3s;
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#222;
+
+    text-decoration:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    box-shadow:
+    0 0 15px rgba(0,212,255,.35);
+
+    transition:.3s;
+
+    z-index:999;
 }
 
 .top-btn:hover{
-    background: orange;
-    transform: translateY(-5px);
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 25px rgba(0,212,255,.5);
 }
 
 /* =========================
-   HOMEに戻るボタン
+   HOMEボタン
 ========================= */
 .home-btn{
-    position: fixed;
-    bottom: 95px; /* TOPボタンの上に配置 */
-    right: 30px;
-    width: 55px;
-    height: 55px;
-    background: #333;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 24px;
-    z-index: 999;
-    transition: 0.3s;
+    position:fixed;
+
+    bottom:100px;
+    right:30px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-light));
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    box-shadow:
+    0 0 15px rgba(255,123,84,.35);
+
+    transition:.3s;
+
+    z-index:999;
 }
 
 .home-btn:hover{
-    background: orange;
-    transform: translateY(-5px);
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 25px rgba(255,123,84,.5);
 }
 
+/* =========================
+   スマホ対応
+========================= */
+@media(max-width:900px){
+
+    .hero{
+        margin:15px;
+    }
+
+    .overlay h1{
+        font-size:60px;
+    }
+
+    .overlay p{
+        font-size:18px;
+    }
+
+    .shops h2{
+        font-size:40px;
+    }
+
+    .shop-card{
+        width:100%;
+        max-width:350px;
+    }
+}
+
+
+
+
+/*カード画像ズーム*/
+.shop-card img{
+    transition:.6s;
+}
+
+.shop-card:hover img{
+    transform:scale(1.12);
+}
+
+
+
+
+
+
+/*タイトルをネオン点滅*/
+.overlay h1{
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+        0 0 10px #00d4ff;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff,
+        0 0 60px #00d4ff;
+    }
+
+}
+
+
+
+
+
+
+
+
+/*見出しの下線アニメーション*/
+.shops h2::after{
+    content:"";
+
+    display:block;
+
+    width:60px;
+    height:3px;
+
+    margin:20px auto;
+
+    background:#00d4ff;
+
+    animation: line 2s infinite alternate;
+}
+
+@keyframes line{
+
+    from{
+        width:60px;
+    }
+
+    to{
+        width:140px;
+    }
+
+}
+
+
+
+
+
+
+
+/*景に光る玉*/
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:400px;
+    height:400px;
+
+    border-radius:50%;
+
+    background:
+    rgba(0,212,255,.12);
+
+    filter:blur(120px);
+
+    top:-100px;
+    right:-100px;
+
+    z-index:-1;
+}
+
+
+
+
+/*ボタンを浮かせる*/
+.top-btn:hover,
+.home-btn:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.08);
+
+}
+
+
+
+/*ーロー画像に高級感のある枠*/
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+
+    border:
+    1px solid rgba(255,255,255,.4);
+
+    border-radius:25px;
+}
+
+
+
+
+/*カードの角に装飾*/
+.shop-card::after{
+    content:"";
+
+    position:absolute;
+
+    top:15px;
+    right:15px;
+
+    width:30px;
+    height:30px;
+
+    border-top:2px solid var(--accent);
+    border-right:2px solid var(--accent);
+}
+
+
+
+/*景にぼかし玉を複数配置*/
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,123,84,.12);
+
+    filter:blur(150px);
+
+    top:-200px;
+    left:-200px;
+
+    z-index:-1;
+}
+
+
+/*写真にフィルム風フレーム*/
+.shop-card img{
+    padding:8px;
+
+    background:white;
+}
+
+
+
+/*高級ブランド風の見出し*/
+.shops h2{
+    text-transform:uppercase;
+
+    letter-spacing:8px;
+
+    font-weight:300;
+}
+
+
+/*写真の下に細いネオンライン*/
+.shop-card img{
+    border-bottom:
+    2px solid rgba(0,212,255,.4);
+}
