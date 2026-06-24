@@ -1,6 +1,7 @@
-/* =========================
-   RESET
-========================= */
+/* =================================
+   TAKASAKI GUIDE
+   Premium Glass Design
+================================= */
 
 *{
     margin:0;
@@ -12,12 +13,102 @@ html{
     scroll-behavior:smooth;
 }
 
+:root{
+
+    --orange:#0b5d7a;
+    --orange-light:#3d89a3;
+
+    --blue:#5cb8a5;
+    --blue-light:#9fd8cc;
+
+    --glass:rgba(255,255,255,.72);
+
+    --text:#333;
+    --sub:#666;
+}
+
+/* =========================
+   BODY
+========================= */
+
 body{
-    font-family:"Yu Gothic",sans-serif;
+
+    font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+
+    color:var(--text);
+
     background:
-    linear-gradient(135deg,#ffffff,#f7f9fc,#eef7ff);
-    color:#333;
+
+    radial-gradient(
+    circle at top left,
+    rgba(255,180,0,.15),
+    transparent 35%),
+
+    radial-gradient(
+    circle at top right,
+    rgba(0,207,255,.15),
+    transparent 40%),
+
+    radial-gradient(
+    circle at bottom left,
+    rgba(0,255,170,.10),
+    transparent 40%),
+
+    linear-gradient(
+    135deg,
+    #ffffff,
+    #f7fbff,
+    #eef8ff);
+
     overflow-x:hidden;
+}
+
+/* 背景装飾 */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background-image:
+    linear-gradient(
+    rgba(255,255,255,.45) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.45) 1px,
+    transparent 1px);
+
+    background-size:45px 45px;
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    rgba(0,207,255,.12);
+
+    filter:blur(140px);
+
+    right:-150px;
+    top:-150px;
+
+    z-index:-1;
 }
 
 /* =========================
@@ -37,40 +128,50 @@ header{
 
     padding:20px 8%;
 
-    background:rgba(255,255,255,.85);
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    border-bottom:1px solid rgba(255,255,255,.9);
+    background:#87eedd;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,.05);
+    0 5px 20px rgba(0,201,167,.25);
 }
 
 .logo{
-    font-size:42px;
+
+    font-size:44px;
     font-weight:900;
-    color:#ff8800;
     letter-spacing:3px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--blue));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 nav ul{
+
     display:flex;
     list-style:none;
     gap:40px;
 }
 
 nav a{
+
     text-decoration:none;
+
     color:#333;
+
     font-size:22px;
     font-weight:bold;
+
     transition:.3s;
 }
 
 nav a:hover{
-    color:#ff8800;
+
+    color:var(--orange);
 }
 
 /* =========================
@@ -78,31 +179,48 @@ nav a:hover{
 ========================= */
 
 .hamburger{
+
     display:none;
+
     flex-direction:column;
+
     gap:6px;
-    background:none;
+
     border:none;
+    background:none;
+
     cursor:pointer;
 }
 
 .hamburger span{
+
     width:30px;
     height:3px;
+
     background:#333;
+
     border-radius:10px;
+
+    transition:.3s;
 }
 
 .hamburger.active span:nth-child(1){
-    transform:translateY(9px) rotate(45deg);
+
+    transform:
+    translateY(9px)
+    rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2){
+
     opacity:0;
 }
 
 .hamburger.active span:nth-child(3){
-    transform:translateY(-9px) rotate(-45deg);
+
+    transform:
+    translateY(-9px)
+    rotate(-45deg);
 }
 
 /* =========================
@@ -110,12 +228,13 @@ nav a:hover{
 ========================= */
 
 .hero{
+
     height:100vh;
 
     background:
     linear-gradient(
-    rgba(255,255,255,.55),
-    rgba(255,255,255,.35)),
+    rgba(255,255,255,.35),
+    rgba(255,255,255,.20)),
     url("img/main.jpg");
 
     background-size:cover;
@@ -124,6 +243,7 @@ nav a:hover{
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
 
     position:relative;
@@ -131,58 +251,100 @@ nav a:hover{
 
 .hero-text{
 
-    padding:70px 80px;
-
     background:
     rgba(255,255,255,.45);
 
     backdrop-filter:blur(25px);
-    -webkit-backdrop-filter:blur(25px);
+
+    padding:70px 80px;
+
+    border-radius:35px;
 
     border:
     1px solid rgba(255,255,255,.9);
 
-    border-radius:35px;
-
     box-shadow:
-    0 15px 50px rgba(0,0,0,.08);
+    0 20px 60px rgba(0,0,0,.08);
 }
 
 .hero h1{
-    font-size:clamp(50px,8vw,100px);
-    color:#222;
+
+    font-size:
+    clamp(55px,8vw,100px);
+
     line-height:1.2;
 
-    text-shadow:
-    0 0 15px rgba(255,170,0,.35);
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--blue));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero p{
+
     margin-top:20px;
+
     font-size:24px;
+
     color:#555;
 }
+
+
+
+
 
 /* =========================
    SCROLL
 ========================= */
 
 .scroll{
+
     position:absolute;
+
     bottom:40px;
     left:50%;
+
     transform:translateX(-50%);
-    color:#444;
+
     text-align:center;
+
+    color:#555;
+}
+
+.scroll span{
+
+    letter-spacing:4px;
+    font-size:14px;
 }
 
 .arrow{
+
     width:15px;
     height:15px;
-    border-right:3px solid #444;
-    border-bottom:3px solid #444;
+
+    border-right:3px solid #555;
+    border-bottom:3px solid #555;
+
     transform:rotate(45deg);
+
     margin:10px auto;
+
+    animation:arrowMove 2s infinite;
+}
+
+@keyframes arrowMove{
+
+    0%,100%{
+        transform:rotate(45deg) translateY(0);
+    }
+
+    50%{
+        transform:rotate(45deg) translateY(8px);
+    }
 }
 
 /* =========================
@@ -192,6 +354,7 @@ nav a:hover{
 .spot{
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -200,7 +363,7 @@ nav a:hover{
     width:90%;
     max-width:1400px;
 
-    margin:70px auto;
+    margin:80px auto;
 
     padding:60px;
 
@@ -215,21 +378,22 @@ nav a:hover{
     border-radius:35px;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.05);
+    0 10px 35px rgba(0,0,0,.05);
 
     transition:.4s;
 }
 
-.spot:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 15px 40px rgba(255,170,0,.15);
-}
-
 .reverse{
     flex-direction:row-reverse;
+}
+
+.spot:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 50px rgba(255,170,0,.12),
+    0 0 30px rgba(0,207,255,.12);
 }
 
 .spot img{
@@ -238,6 +402,8 @@ nav a:hover{
     max-width:550px;
 
     border-radius:25px;
+
+    object-fit:cover;
 
     box-shadow:
     0 15px 35px rgba(0,0,0,.12);
@@ -250,8 +416,12 @@ nav a:hover{
     transform:scale(1.05);
 
     box-shadow:
-    0 0 30px rgba(255,170,0,.25);
+    0 0 35px rgba(0,207,255,.25);
 }
+
+/* =========================
+   TEXT
+========================= */
 
 .spot-text{
     flex:1;
@@ -261,9 +431,16 @@ nav a:hover{
 
     font-size:60px;
 
-    color:#ff8800;
-
     margin-bottom:25px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--blue));
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .spot-text p{
@@ -287,9 +464,9 @@ nav a:hover{
 
     padding:18px 40px;
 
-    border-radius:15px;
-
     text-decoration:none;
+
+    border-radius:15px;
 
     color:white;
 
@@ -299,23 +476,28 @@ nav a:hover{
     background:
     linear-gradient(
     135deg,
-    #ffb347,
-    #ff8800);
+    var(--orange),
+    var(--orange-light),
+    var(--blue));
+
+    background-size:200% 200%;
 
     box-shadow:
-    0 10px 25px rgba(255,170,0,.25);
+    0 10px 25px rgba(0,207,255,.20);
 
-    transition:.3s;
+    transition:.4s;
 }
 
 .link-button:hover{
 
     transform:
-    translateY(-4px)
+    translateY(-5px)
     scale(1.05);
 
+    background-position:right center;
+
     box-shadow:
-    0 15px 35px rgba(255,170,0,.35);
+    0 15px 35px rgba(255,170,0,.30);
 }
 
 /* =========================
@@ -328,14 +510,28 @@ footer{
 
     text-align:center;
 
-    padding:60px;
+    padding:70px 20px;
 
-    background:white;
+    background:
+    linear-gradient(
+    135deg,
+    #87eedd);
 
-    color:#666;
+    color:white;
+}
 
-    box-shadow:
-    0 -5px 20px rgba(0,0,0,.05);
+footer p{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+footer small{
+
+    opacity:.9;
 }
 
 /* =========================
@@ -352,27 +548,29 @@ footer{
     width:60px;
     height:60px;
 
-    border-radius:50%;
-
-    text-decoration:none;
-
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:26px;
+    border-radius:50%;
 
-    color:#ff8800;
+    text-decoration:none;
+
+    font-size:26px;
 
     background:
     rgba(255,255,255,.9);
 
+    color:var(--orange);
+
     backdrop-filter:blur(10px);
 
     box-shadow:
-    0 0 25px rgba(255,170,0,.25);
+    0 0 25px rgba(0,207,255,.25);
 
     transition:.3s;
+
+    z-index:999;
 }
 
 .top-btn:hover{
@@ -380,7 +578,7 @@ footer{
     transform:translateY(-5px);
 
     box-shadow:
-    0 0 40px rgba(255,170,0,.45);
+    0 0 40px rgba(255,170,0,.40);
 }
 
 /* =========================
@@ -403,9 +601,11 @@ footer{
     }
 
     #nav-menu{
+
         display:none;
 
         position:fixed;
+
         top:0;
         left:0;
 
@@ -413,9 +613,10 @@ footer{
         height:100vh;
 
         background:
-        rgba(255,255,255,.95);
+        rgba(255,255,255,.96);
 
-        flex-direction:column;
+        backdrop-filter:blur(20px);
+
         justify-content:center;
         align-items:center;
     }
@@ -425,46 +626,109 @@ footer{
     }
 
     #nav-menu ul{
+
         flex-direction:column;
+
         gap:40px;
     }
 
+    #nav-menu a{
+
+        font-size:30px;
+    }
+
     .hero-text{
+
+        width:90%;
+
         padding:40px 25px;
     }
 
     .hero h1{
+
         font-size:42px;
     }
 
     .hero p{
+
         font-size:18px;
     }
 
     .spot,
     .reverse{
+
         flex-direction:column;
     }
 
     .spot{
+
         width:95%;
+
         padding:30px 20px;
+
+        gap:30px;
     }
 
     .spot img{
+
         width:100%;
     }
 
     .spot-text h2{
+
         font-size:34px;
     }
 
     .spot-text p{
+
         font-size:18px;
     }
 
     .link-button{
+
         width:100%;
+
         text-align:center;
     }
+
+    .top-btn{
+
+        width:55px;
+        height:55px;
+    }
+}
+
+
+
+/* =========================
+   両サイドの帯
+========================= */
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    width:168px;
+    height:100vh;
+    z-index:500;
+    pointer-events:none;
+    body{
+    font-family:sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    overflow-x:hidden;
+
+    padding-left:168px;
+    padding-right:168px;
+}
+}
+
+body::before{
+    left:0;
+    border-right:2px solid rgba(255,255,255,0.1);
+}
+
+body::after{
+    right:0;
+    border-left:2px solid rgba(255,255,255,0.1);
 }
