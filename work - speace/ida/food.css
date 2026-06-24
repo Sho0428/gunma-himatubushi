@@ -100,7 +100,7 @@ body::before{
 
     position:relative;
 
-    overflow:hidden;
+    overflow:visible;
 
     border-radius:35px;
 
@@ -436,7 +436,7 @@ footer::before{
 }
 
 /* =========================
-   HOMEボタン
+   HOMEボタン（たこ焼き完成版）
 ========================= */
 .home-btn{
     position:fixed;
@@ -444,43 +444,331 @@ footer::before{
     bottom:100px;
     right:30px;
 
-    width:60px;
-    height:60px;
+    width:85px;
+    height:85px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    overflow:visible;
+
+    background:
+radial-gradient(
+circle at 30% 30%,
+rgba(255,255,255,.25) 0%,
+rgba(255,255,255,.15) 12%,
+transparent 20%
+),
+
+radial-gradient(
+circle at 70% 70%,
+rgba(80,20,0,.25) 0%,
+transparent 18%
+),
+
+radial-gradient(
+circle at 20% 75%,
+rgba(90,30,0,.18) 0%,
+transparent 14%
+),
+
+radial-gradient(
+circle at 75% 25%,
+rgba(90,30,0,.18) 0%,
+transparent 16%
+),
+
+radial-gradient(
+circle at center,
+#e09a56 0%,
+#c77735 45%,
+#a95624 75%,
+#7a3e1b 100%
+);
+
+    box-shadow:
+    inset -10px -10px 20px rgba(0,0,0,.25),
+    inset 10px 10px 15px rgba(255,255,255,.15),
+    0 10px 25px rgba(0,0,0,.25),
+    0 0 25px rgba(255,140,50,.4);
+
+    transition:.3s;
+}
+
+/* ソース */
+.home-btn::before{
+    content:"";
+
+    position:absolute;
+
+    width:85px;
+    height:14px;
+
+    background:
+linear-gradient(
+to bottom,
+#5b250f 0%,
+#2f1208 50%,
+#5b250f 100%
+);
+
+    border-radius:30px;
+
+    transform:rotate(-18deg);
+
+    z-index:1;
+}
+
+/* マヨネーズ */
+.home-btn::after{
+    content:"";
+
+    position:absolute;
+
+    width:85px;
+    height:4px;
+
+    background:#fff8dc;
+
+    border-radius:20px;
+
+    transform:rotate(-18deg);
+
+    z-index:2;
+
+    box-shadow:
+0 -12px #fff8dc,
+0 12px #fff8dc,
+0 1px 2px rgba(0,0,0,.15);
+}
+
+/* 青のり */
+.aonori{
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background-image:
+    radial-gradient(#2e7d32 1px, transparent 1px);
+
+    background-size:16px 16px;
+    opacity:.25;
+
+    opacity:.35;
+
+    z-index:3;
+}
+
+/* 鰹節 */
+.katsuobushi{
+    position:absolute;
+
+    width:16px;
+    height:7px;
+
+    background:
+    rgba(255,225,190,.75);
+
+    border-radius:
+    50% 0 50% 0;
+
+    z-index:4;
+}
+
+.k1{
+    top:18px;
+    left:24px;
+    transform:rotate(15deg);
+}
+
+.k2{
+    top:20px;
+    left:45px;
+    transform:rotate(-10deg);
+}
+
+.k3{
+    top:35px;
+    left:20px;
+    transform:rotate(-20deg);
+}
+
+.k4{
+    top:50px;
+    left:25px;
+    transform:rotate(10deg);
+}
+
+.k5{
+    top:48px;
+    left:45px;
+    transform:rotate(-15deg);
+}
+
+.k6{
+    top:35px;
+    left:50px;
+    transform:rotate(20deg);
+}
+
+.k7{
+    top:25px;
+    left:35px;
+    transform:rotate(-25deg);
+}
+
+.k8{
+    top:58px;
+    left:35px;
+    transform:rotate(5deg);
+}
+
+/* 爪楊枝 */
+.toothpick{
+    position:absolute;
+
+    width:90px;
+    height:5px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #c89a64,
+    #f3d4a7
+    );
+
+    border-radius:10px;
+
+    top:18px;
+    right:-20px;
+
+    transform:rotate(-45deg);
+
+    z-index:2;
+
+    box-shadow:
+    0 2px 4px rgba(0,0,0,.25);
+}
+
+.toothpick::after{
+    content:"";
+
+    position:absolute;
+
+    right:-8px;
+    top:-2px;
+
+    border-left:10px solid #f3d4a7;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
+}
+
+
+.toothpick::before{
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
 
     border-radius:50%;
 
     background:
-    linear-gradient(
-    135deg,
-    var(--accent),
-    var(--accent-light));
+    radial-gradient(
+    rgba(0,0,0,.45),
+    transparent 70%
+    );
 
-    color:white;
+    left:-8px;
+    top:-8px;
 
-    text-decoration:none;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:24px;
-
-    box-shadow:
-    0 0 15px rgba(255,123,84,.35);
-
-    transition:.3s;
-
-    z-index:999;
+    z-index:-1;
 }
 
+.toothpick::after{
+    content:"";
+
+    position:absolute;
+
+    right:-8px;
+    top:-2px;
+
+    border-left:10px solid #f3d4a7;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
+}
+
+/* HOMEアイコン */
+.home-icon{
+    position:relative;
+
+    z-index:10;
+
+    font-size:28px;
+
+    filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+/* ホバー */
 .home-btn:hover{
-    transform:scale(1.1);
+    transform:
+    translateY(-8px)
+    scale(1.08);
 
     box-shadow:
-    0 0 25px rgba(255,123,84,.5);
+    inset -10px -10px 20px rgba(0,0,0,.25),
+    inset 10px 10px 15px rgba(255,255,255,.15),
+    0 15px 35px rgba(0,0,0,.3),
+    0 0 40px rgba(255,140,50,.8);
 }
+
+
+@keyframes flutter{
+    0%{
+        transform:rotate(-15deg);
+    }
+
+    50%{
+        transform:
+        translateY(-2px)
+        rotate(15deg);
+    }
+
+    100%{
+        transform:rotate(-15deg);
+    }
+}
+
+
+
+
+
+
+.home-btn{
+    background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.25) 0 10%, transparent 11%),
+    radial-gradient(circle at 70% 65%, rgba(90,30,0,.18) 0 15%, transparent 16%),
+    radial-gradient(circle at 35% 75%, rgba(90,30,0,.15) 0 12%, transparent 13%),
+    radial-gradient(circle at 35% 30%,
+    #f2bc7d 0%,
+    #d48442 35%,
+    #b45f29 65%,
+    #7a3e1b 100%);
+}
+
+
+
 
 /* =========================
    スマホ対応
