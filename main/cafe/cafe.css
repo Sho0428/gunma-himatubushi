@@ -224,7 +224,7 @@ body::after{
    カード
 ========================= */
 .shop-card{
-    width:min(320px,100%);
+    width:min(320px);
 
     background:rgba(255,255,255,.82);
 
