@@ -358,9 +358,9 @@ nav a:hover{
     align-items:center;
     justify-content:center;
 
-    gap:70px;
+    gap:75px;
 
-    width:90%;
+    width:85%;
     max-width:1400px;
 
     margin:80px auto;
@@ -700,28 +700,7 @@ footer small{
 
 
 
-/* =========================
-   両サイドの帯
-========================= */
-body::before,
-body::after{
-    content:"";
-    position:fixed;
-    top:0;
-    width:168px;
-    height:100vh;
-    z-index:500;
-    pointer-events:none;
-    body{
-    font-family:sans-serif;
-    background:#f4f4f4;
-    color:#333;
-    overflow-x:hidden;
 
-    padding-left:168px;
-    padding-right:168px;
-}
-}
 
 body::before{
     left:0;
