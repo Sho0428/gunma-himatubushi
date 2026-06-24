@@ -63,31 +63,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 背景装飾 */
 
-body::before{
-
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    background-image:
-    linear-gradient(
-    rgba(255,255,255,.45) 1px,
-    transparent 1px),
-
-    linear-gradient(
-    90deg,
-    rgba(255,255,255,.45) 1px,
-    transparent 1px);
-
-    background-size:45px 45px;
-
-    z-index:-2;
-
-    pointer-events:none;
-}
 
 body::after{
 
@@ -707,7 +683,3 @@ body::after{
     right:0;
     border-left:2px solid rgba(255,255,255,0.1);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 8d0b3eae2cadb231d38187e55357d4a95d050d06
