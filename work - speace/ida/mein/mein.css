@@ -128,10 +128,10 @@ header{
 
     padding:20px 8%;
 
-    background:#87eedd;
+    background:#27282d;
 
     box-shadow:
-    0 5px 20px rgba(0,201,167,.25);
+    0 5px 20px rgba(244, 247, 246, 0.25);
 }
 
 .logo{
@@ -140,14 +140,7 @@ header{
     font-weight:900;
     letter-spacing:3px;
 
-    background:
-    linear-gradient(
-    135deg,
-    var(--orange),
-    var(--blue));
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    color:white;
 }
 
 nav ul{
@@ -161,7 +154,7 @@ nav a{
 
     text-decoration:none;
 
-    color:#333;
+    color:#fcfbfb;
 
     font-size:22px;
     font-weight:bold;
@@ -515,7 +508,7 @@ footer{
     background:
     linear-gradient(
     135deg,
-    #87eedd);
+    #27282d);
 
     color:white;
 }
@@ -527,10 +520,13 @@ footer p{
     font-weight:bold;
 
     margin-bottom:10px;
+
+    color:white;
 }
 
 footer small{
 
+    color:white;
     opacity:.9;
 }
 
@@ -711,3 +707,7 @@ body::after{
     right:0;
     border-left:2px solid rgba(255,255,255,0.1);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d0b3eae2cadb231d38187e55357d4a95d050d06
