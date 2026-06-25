@@ -314,6 +314,13 @@ nav a:hover{
     font-size:14px;
 }
 
+.arrow-wrap{
+
+    margin-top:10px;
+
+    animation:arrowMove 2s infinite;
+}
+
 .arrow{
 
     width:15px;
@@ -324,19 +331,17 @@ nav a:hover{
 
     transform:rotate(45deg);
 
-    margin:10px auto;
-
-    animation:arrowMove 2s infinite;
+    margin:0 auto;
 }
 
 @keyframes arrowMove{
 
     0%,100%{
-        transform:rotate(45deg) translateY(0);
+        transform:translateY(0);
     }
 
     50%{
-        transform:rotate(45deg) translateY(8px);
+        transform:translateY(8px);
     }
 }
 
