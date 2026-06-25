@@ -515,6 +515,25 @@ body::after{
 .lightbox-next{ right:30px; }
 
 /* =========================
+   戻るボタン
+========================= */
+.back-button{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+
+    padding: 10px;
+
+    /* z-index: 10000; */
+
+    text-shadow: 0 0 5px rgba(0,0,0,.7);
+}
+/* =========================
    スマホ対応
 ========================= */
 @media(max-width:900px){
