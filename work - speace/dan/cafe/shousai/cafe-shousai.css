@@ -580,3 +580,36 @@ body::after{
         z-index:200;
     }
 }
+
+
+.page-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+}
+
+.page-header ul{
+    display:flex;
+    list-style:none;
+    gap:50px;
+}
+
+.page-header a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.page-header a:hover{
+    color:var(--accent-light);
+}
