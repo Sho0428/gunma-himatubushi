@@ -614,3 +614,39 @@ body::after{
 .page-header a:hover{
     color:var(--accent-light);
 }
+
+
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+}
+
+.hamburger span{
+
+    width:30px;
+    height:3px;
+
+    background:white;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+
+
