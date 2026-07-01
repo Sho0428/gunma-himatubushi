@@ -7,7 +7,25 @@
 
     <link rel="stylesheet" href="../food-shousai.css">
 </head>
+<header class="page-header">
 
+    <!-- ナビ -->
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="../../../facility/facility.html">施設</a></li>
+            <li><a href="../../../cafe/cafe.html">カフェ</a></li>
+            <li><a href="../../../food/food.html">飲食店</a></li>
+        </ul>
+    </nav>
+
+    <!-- ハンバーガー -->
+    <button class="hamburger" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
 <body>
 
     <!-- タイトル -->
@@ -109,6 +127,23 @@
 
     <!-- JavaScript -->
     <script>
+        // メニューバー　ハンバーガー　
+        const btn = document.getElementById('hamburger-btn');
+        const nav = document.getElementById('nav-menu');
+
+        btn.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            btn.classList.toggle('active', isOpen);
+            btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+        });
+
+        // メニュー内のリンクをタップしたら閉じる
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('open');
+                btn.classList.remove('active');
+            });
+        });
         // =========================
         // 画像設定
         // =========================
