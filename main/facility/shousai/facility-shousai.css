@@ -89,25 +89,45 @@ body::after{
 　戻るボタン
 ========================= */
 .back-button{
-    position: fixed;
-    top: 20px;
-    left: 20px;
 
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-    text-decoration: none;
+    position:absolute;
 
-    padding: 10px;
+    left:30px;
 
-    z-index: 10000;
+    top:50%;
 
-    text-shadow: 0 0 5px rgba(0,0,0,.7);
+    transform:translateY(-50%);
+
+    width:55px;
+    height:55px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:38px;
+    font-weight:bold;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+    z-index:10;
 }
 
 .back-button:hover{
-    opacity: .8;
+
+    transform:translateY(-50%) scale(1.08);
+
+    background:rgba(255,255,255,.28);
 }
+
 /* =========================
    タイトル
 ========================= */
