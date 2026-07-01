@@ -622,3 +622,377 @@ body::after{
         z-index:200;
     }
 }
+
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+}
+
+.hamburger span{
+
+    width:30px;
+    height:3px;
+
+    background:#f34f19;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.hamburger.active span:nth-child(1){
+
+    transform:
+    translateY(9px)
+    rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+
+    transform:
+    translateY(-9px)
+    rotate(-45deg);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(255,255,255,.35),
+    rgba(255,255,255,.20)),
+    url("img/main.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.hero-text{
+
+    background:
+    rgba(255,255,255,.45);
+
+    backdrop-filter:blur(25px);
+
+    padding:70px 80px;
+
+    border-radius:35px;
+
+    border:
+    1px solid rgba(255,255,255,.9);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.08);
+}
+
+.hero h1{
+
+    font-size:clamp(55px,8vw,100px);
+
+    line-height:1.2;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--orange),
+    var(--blue));
+
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    color:#555;
+}
+
+
+@media (max-width:900px){
+
+    /* 三本線を表示 */
+    .hamburger{
+        display:flex;
+    }
+
+    /* 最初はメニューを画面外に隠す */
+    #nav-menu{
+        position:fixed;
+        top:80px;
+        right:-250px;
+
+        width:250px;
+        height:100vh;
+
+        background:#2b2b31;
+
+        transition:.3s;
+    }
+
+    /* ボタンを押したら表示 */
+    #nav-menu.open{
+        right:0;
+    }
+
+    #nav-menu ul{
+        display:flex;
+        flex-direction:column;
+        padding:40px;
+        gap:25px;
+    }
+
+    #nav-menu a{
+        color:white;
+    }
+}
+@media (max-width:900px){
+
+    #nav-menu ul{
+        flex-direction:column;
+        padding:40px;
+        gap:25px;
+    }
+
+    /* 追加 */
+    .page-header{
+        justify-content:flex-end;
+    }
+}
+
+
+
+
+/*=========================
+ HEADER
+=========================*/
+
+.page-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    height:80px;
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+
+    padding:0 8%;
+
+    background:#2b2b31;
+
+    z-index:1000;
+}
+
+/* PCメニュー */
+
+#nav-menu ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+#nav-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+#nav-menu a:hover{
+    color:#ff7b54;
+}
+
+/*=========================
+ HAMBURGER
+=========================*/
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    background:none;
+    border:none;
+
+    cursor:pointer;
+
+    z-index:1100;
+}
+
+.hamburger span{
+
+    width:32px;
+    height:3px;
+
+    background:#ff7b54;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+/* × */
+
+.hamburger.active span:nth-child(1){
+
+    transform:translateY(9px) rotate(45deg);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+    transform:translateY(-9px) rotate(-45deg);
+
+}
+
+/*=========================
+ スマホ
+=========================*/
+
+@media (max-width:900px){
+
+    /* 三本線表示 */
+
+    .hamburger{
+        display:flex;
+    }
+
+    /* PCメニュー非表示 */
+
+    #nav-menu{
+
+        position:fixed;
+
+        top:80px;
+        right:-260px;
+
+        width:260px;
+        height:100vh;
+
+        background:#2b2b31;
+
+        transition:.3s;
+    }
+
+    #nav-menu.open{
+        right:0;
+    }
+
+    #nav-menu ul{
+
+        display:flex;
+        flex-direction:column;
+
+        gap:30px;
+
+        padding:40px;
+    }
+
+    #nav-menu a{
+
+        color:white;
+        font-size:20px;
+    }
+}
+
+
+@media (max-width:900px){
+
+    /* 三本線を表示 */
+    .hamburger{
+        display:flex;
+    }
+
+    /* 最初はメニューを画面外に隠す */
+    #nav-menu{
+        position:fixed;
+        top:80px;
+        right:-250px;
+
+        width:250px;
+        height:100vh;
+
+        background:#2b2b31;
+
+        transition:.3s;
+    }
+
+    /* ボタンを押したら表示 */
+    #nav-menu.open{
+        right:0;
+    }
+
+    #nav-menu ul{
+        display:flex;
+        flex-direction:column;
+        padding:40px;
+        gap:25px;
+    }
+
+    #nav-menu a{
+        color:white;
+    }
+}
+@media (max-width:900px){
+
+    #nav-menu ul{
+        flex-direction:column;
+        padding:40px;
+        gap:25px;
+    }
+
+    /* 追加 */
+    .page-header{
+        justify-content:flex-end;
+    }
+}
+
