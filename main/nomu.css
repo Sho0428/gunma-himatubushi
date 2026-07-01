@@ -154,7 +154,7 @@ nav a{
 
     text-decoration:none;
 
-    color:#fcfbfb;
+    color:#ffffff;
 
     font-size:22px;
     font-weight:bold;
@@ -190,7 +190,7 @@ nav a:hover{
     width:30px;
     height:3px;
 
-    background:#333;
+    background:#d0d0d0;
 
     border-radius:10px;
 
@@ -617,8 +617,8 @@ footer small{
         height:100vh;
 
         background:
-        rgba(255,255,255,.96);
-
+        rgba(126, 126, 126, 0.96);
+        
         backdrop-filter:blur(20px);
 
         justify-content:center;

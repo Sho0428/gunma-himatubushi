@@ -98,7 +98,48 @@ body::after{
 
     z-index:-1;
 }
+/* =========================
+　戻るボタン
+========================= */
+.back-button{
 
+    position:absolute;
+
+    left:30px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:55px;
+    height:55px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:38px;
+    font-weight:bold;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+    z-index:10;
+}
+
+.back-button:hover{
+
+    transform:translateY(-50%) scale(1.08);
+
+    background:rgba(255,255,255,.28);
+}
 /* =========================
    メイン画像
 ========================= */

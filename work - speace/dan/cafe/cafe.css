@@ -429,3 +429,76 @@ footer{
         bottom:75px;
     }
 }
+
+.page-header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:15px 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+
+    z-index:9999;
+}
+
+.logo{
+    color:white;
+    font-weight:bold;
+}
+
+.menu-btn{
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+    display:none;
+}
+
+.nav-menu{
+    display:flex;
+    gap:30px;
+}
+
+.nav-menu a{
+    color:white;
+    text-decoration:none;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-menu{
+        position:absolute;
+
+        top:70px;
+        right:0;
+
+        width:220px;
+
+        background:rgba(0,0,0,.95);
+
+        display:none;
+        flex-direction:column;
+
+        padding:20px;
+    }
+
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu a{
+        padding:10px 0;
+        border-bottom:1px solid rgba(255,255,255,.2);
+    }
+}
