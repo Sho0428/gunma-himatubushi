@@ -118,7 +118,7 @@ body::after{
 
     transition:.3s;
 
-    z-index:10;
+    z-index:1110;
 }
 
 .back-button:hover{
@@ -467,7 +467,7 @@ body::after{
 
     transition:.3s;
 
-    z-index:999;
+    z-index: 1110;;
 }
 
 .home-btn:hover{
